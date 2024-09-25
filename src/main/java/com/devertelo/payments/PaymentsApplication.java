@@ -15,17 +15,17 @@ public class PaymentsApplication {
         ConfigurableApplicationContext context = SpringApplication.run(PaymentsApplication.class, args);
 
         var jmsTemplate = context.getBean(JmsTemplate.class);
-        UserApiRequest userRequest = new UserApiRequest().username("joao")
-                .email("joao@gmail.com")
-                .password("12345");
-        jmsTemplate.convertAndSend("users",
-                userRequest);
-
-        UserApiRequest userRequest2 = new UserApiRequest().username("amanda")
-                .email("amanda@gmail.com")
-                .password("12345");
-        jmsTemplate.convertAndSend("users",
-                userRequest2);
+//        UserApiRequest userRequest = new UserApiRequest().username("joao")
+//                .email("joao@gmail.com")
+//                .password("12345");
+//        jmsTemplate.convertAndSend("users",
+//                userRequest);
+//
+//        UserApiRequest userRequest2 = new UserApiRequest().username("amanda")
+//                .email("amanda@gmail.com")
+//                .password("12345");
+//        jmsTemplate.convertAndSend("users",
+//                userRequest2);
     }
 
 }

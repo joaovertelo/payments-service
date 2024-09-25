@@ -22,7 +22,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ./sql/database.sql:/docker-entrypoint-initdb.d/database.sql
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      - postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     networks:
@@ -36,6 +37,10 @@ services:
       - activemq_data:/var/lib/activemq
     networks:
       - app-network
+
+volumes:
+  postgres-data:
+  activemq_data:
 
 networks:
   app-network:
